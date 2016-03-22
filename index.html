@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>learn ngTable</title>
+  <meta charset="utf-8">
+  <script src="angular.min.js"></script>
+  <link rel="stylesheet" href="ng-table.min.css">
+  <script src="ng-table.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="MainController">
+  <table ng-table="tableParams" class="table" show-filter="true">
+      <tr ng-repeat="user in $data">
+          <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+              {{user.name}}</td>
+          <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
+              {{user.age}}</td>
+      </tr>
+  </table>
+</body>
+</html>
